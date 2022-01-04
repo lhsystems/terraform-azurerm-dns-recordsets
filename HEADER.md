@@ -1,6 +1,3 @@
-# Usage
-
-<!--- BEGIN_TF_DOCS --->
 This is a Fork as the original repo looked dead.
 
 # Azure DNS Recordsets Module
@@ -111,48 +108,3 @@ of the underlying Terraform provider:
 * Braking Changes
 
   The Resource name is changed from `this` to `name` as it better reflects the output of the module.
-
-## Requirements
-
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 0.12.0 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement_azurerm) | >= 1.7.0 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider_azurerm) | >= 1.7.0 |
-
-## Modules
-
-No modules.
-
-## Resources
-
-| Name | Type |
-|------|------|
-| [azurerm_dns_a_record.name](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_a_record) | resource |
-| [azurerm_dns_aaaa_record.name](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_aaaa_record) | resource |
-| [azurerm_dns_cname_record.name](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_cname_record) | resource |
-| [azurerm_dns_mx_record.name](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_mx_record) | resource |
-| [azurerm_dns_ns_record.name](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_ns_record) | resource |
-| [azurerm_dns_ptr_record.name](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_ptr_record) | resource |
-| [azurerm_dns_srv_record.name](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_srv_record) | resource |
-| [azurerm_dns_txt_record.name](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_txt_record) | resource |
-
-## Inputs
-
-| Name | Description | Type |
-|------|-------------|------|
-| <a name="input_dns_zone_name"></a> [dns_zone_name](#input_dns_zone_name) | The name of the DNS zone within the given resource group where the records will be added. | `string` |
-| <a name="input_recordsets"></a> [recordsets](#input_recordsets) | List of DNS record objects to manage, in the standard terraformdns structure. | <pre>list(object({<br>    name    = string<br>    type    = string<br>    ttl     = number<br>    records = list(string)<br>  }))</pre> |
-| <a name="input_resource_group_name"></a> [resource_group_name](#input_resource_group_name) | The name of the resource group that contains the DNS zone where the records will be added. | `string` |
-
-## Outputs
-
-No outputs.
-
-<!--- END_TF_DOCS --->
-
