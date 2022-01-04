@@ -12,7 +12,7 @@ on:
 
 jobs:
   terraform-release:
-    runs-on: [self-hosted, linux] # to use github-runners use "ubuntu-latest" instead
+    runs-on: [ubuntu-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
