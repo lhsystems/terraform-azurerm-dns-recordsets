@@ -1,0 +1,13 @@
+# !!! This file is managed by lhsystems/base-sync sync-*.yml workflow and periodically synced !!!
+version: 2
+registries:
+  terraform-lhsystems: # Define access for a private registry, https://github.com/github/docs/pull/6808
+    type: terraform-registry
+    url: https://app.terraform.io
+    token: ${{secrets.TF_API_TOKEN_DEPENDABOT}} #its currently the tcoe team (team-DwrrReGnZEaWNVyE) token
+updates:
+  - package-ecosystem: "terraform"
+    directory: "/"
+    registries: "*" # or terraform-lhsystems
+    schedule:
+      interval: "daily"

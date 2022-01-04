@@ -1,0 +1,29 @@
+# !!! This file is managed by lhsystems/base-sync sync-*.yml workflow and periodically synced !!!
+# see here: https://github.com/jpmcb/prow-github-actions
+name: "chatops"
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  chatops:
+    runs-on: [self-hosted, linux] # to use github-runners use "ubuntu-latest" instead
+    steps:
+      - uses: jpmcb/prow-github-actions@v1.1.3
+        with:
+          prow-commands: '/assign
+            /unassign
+            /approve
+            /retitle
+            /area
+            /kind
+            /priority
+            /remove
+            /lgtm
+            /close
+            /reopen
+            /lock
+            /hold
+            /cc
+            /uncc'
+          github-token: "${{ secrets.PUSH_TOKEN_GITHUB }}" # as per https://github.com/peter-evans/create-pull-request/issues/48#issuecomment-536204092

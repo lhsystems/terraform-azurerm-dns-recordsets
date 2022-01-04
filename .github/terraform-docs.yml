@@ -1,0 +1,29 @@
+# !!! This file is managed by lhsystems/base-sync sync-*.yml workflow and periodically synced !!!
+formatter: markdown table
+header-from: HEADER.md
+sections:
+  hide-all: true
+  show-all: false
+  show:
+    - header
+    - inputs
+    - outputs
+    - providers
+    - modules
+    - resources
+    - requirements
+output-values:
+  enabled: false
+  from: ''
+sort:
+  enabled: true
+  by: required
+settings:
+  indent: 2
+  color: true
+  escape: false
+  default: false
+  required: false
+  sensitive: true
+  type: true
+

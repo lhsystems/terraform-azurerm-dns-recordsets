@@ -1,0 +1,20 @@
+# !!! This file is managed by lhsystems/base-sync sync-*.yml workflow and periodically synced !!!
+# see here: https://github.com/jpmcb/prow-github-actions
+#  This Github workflow will check every hour for PRs with the lgtm label and will attempt to automatically merge them.
+#  If the hold label is present, it will block automatic merging.
+name: "chatops-lgtm-merge"
+on:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  chatops-lgtm-merge:
+    runs-on: [self-hosted, linux] # to use github-runners use "ubuntu-latest" instead
+    steps:
+      - uses: jpmcb/prow-github-actions@v1.1.3
+        with:
+          jobs: 'lgtm'
+          github-token: "${{ secrets.PUSH_TOKEN_GITHUB }}" # as per https://github.com/peter-evans/create-pull-request/issues/48#issuecomment-536204092
+
+          # this is optional and defaults to 'merge'
+          merge-method: 'merge'

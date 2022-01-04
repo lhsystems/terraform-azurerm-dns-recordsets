@@ -1,0 +1,23 @@
+# With the command /area bug, the issue or PR will be labeled with area/bug
+area:
+  - 'azure'
+  - 'google'
+  - 'vault'
+  - 'github'
+  - 'hcp'
+  - 'tfe'
+  - 'aviatrix'
+  - 'ansible'
+  - 'okta'
+# With the command /kind cleanup, the issue or PR will be labeled with kind/cleanup
+kind:
+  - 'failing-test'
+  - 'cleanup'
+  - 'bug'
+  - 'important'
+  - 'enhancement'
+# With the command /priority low, the issue or PR will be labeled with priority/low
+priority:
+  - 'low'
+  - 'medium'
+  - 'high'

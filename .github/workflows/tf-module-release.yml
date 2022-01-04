@@ -1,0 +1,24 @@
+# !!! This file is managed by lhsystems/base-sync sync-*.yml workflow and periodically synced !!!
+name: "terraform-release"
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '.github/**'
+      - '.devcontainer/**'
+      - '.vscode/**'
+
+jobs:
+  terraform-release:
+    runs-on: [self-hosted, linux] # to use github-runners use "ubuntu-latest" instead
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Release
+        uses: rymndhng/release-on-push-action@master
+        with:
+          bump_version_scheme: patch # https://github.com/rymndhng/release-on-push-action#how-do-i-change-the-bump-version-scheme-using-pull-requests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
