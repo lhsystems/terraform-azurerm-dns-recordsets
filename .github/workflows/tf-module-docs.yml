@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform-docs:
-    runs-on: [self-hosted, linux] # to use github-runners use "ubuntu-latest" instead
+    runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
         with:
